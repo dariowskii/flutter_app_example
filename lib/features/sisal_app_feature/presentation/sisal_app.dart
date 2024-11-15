@@ -9,7 +9,7 @@ class SisalApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Sisal',
-      routerConfig: GoRouter(routes: $appRoutes),
+      routerConfig: router,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.green,
@@ -18,3 +18,5 @@ class SisalApp extends StatelessWidget {
     );
   }
 }
+
+final router = GoRouter(routes: $appRoutes);
