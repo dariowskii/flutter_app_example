@@ -20,11 +20,14 @@ class _HomePageState extends State<HomePage>
 
   late TabController _tabController;
 
+  int _currentIndex = 0;
+
   @override
   void initState() {
     super.initState();
 
     _tabController = TabController(
+      initialIndex: _currentIndex,
       length: _tabs.length,
       vsync: this,
     );
@@ -37,10 +40,18 @@ class _HomePageState extends State<HomePage>
         title: const Text('Sisal'),
       ),
       body: TabBarView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: _tabs,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+          _tabController.animateTo(index);
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
