@@ -30,20 +30,23 @@ class ExternalLinkTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'Questo pulsante tenta di aprire l\'app di Instagram, se installata.\nSe non funziona, apre lo store per scaricarla.',
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        const SizedBox(height: 32),
-        ElevatedButton(
-          onPressed: _openInstagram,
-          child: const Text('Apri Instagram'),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Questo pulsante tenta di aprire l\'app di Instagram, se installata.\nSe non funziona, apre lo store per scaricarla.',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          const SizedBox(height: 32),
+          ElevatedButton(
+            onPressed: _openInstagram,
+            child: const Text('Apri Instagram'),
+          ),
+        ],
+      ),
     );
   }
 }
