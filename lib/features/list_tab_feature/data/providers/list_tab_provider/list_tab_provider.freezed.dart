@@ -16,14 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RssFeedItem {
-  String get title => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
-  String get creator => throw _privateConstructorUsedError;
-  String get pubDate => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
-  String get guid => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
+  String? get creator => throw _privateConstructorUsedError;
+  String? get pubDate => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
+  String? get guid => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get thumbnailUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of RssFeedItem
   /// with the given fields replaced by the non-null parameter values.
@@ -39,14 +39,14 @@ abstract class $RssFeedItemCopyWith<$Res> {
       _$RssFeedItemCopyWithImpl<$Res, RssFeedItem>;
   @useResult
   $Res call(
-      {String title,
-      String link,
-      String creator,
-      String pubDate,
-      String category,
-      String guid,
-      String description,
-      String thumbnailUrl});
+      {String? title,
+      String? link,
+      String? creator,
+      String? pubDate,
+      String? category,
+      String? guid,
+      String? description,
+      String? thumbnailUrl});
 }
 
 /// @nodoc
@@ -64,48 +64,48 @@ class _$RssFeedItemCopyWithImpl<$Res, $Val extends RssFeedItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
-    Object? link = null,
-    Object? creator = null,
-    Object? pubDate = null,
-    Object? category = null,
-    Object? guid = null,
-    Object? description = null,
-    Object? thumbnailUrl = null,
+    Object? title = freezed,
+    Object? link = freezed,
+    Object? creator = freezed,
+    Object? pubDate = freezed,
+    Object? category = freezed,
+    Object? guid = freezed,
+    Object? description = freezed,
+    Object? thumbnailUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      link: null == link
+              as String?,
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      creator: null == creator
+              as String?,
+      creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as String,
-      pubDate: null == pubDate
+              as String?,
+      pubDate: freezed == pubDate
           ? _value.pubDate
           : pubDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
+              as String?,
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      guid: null == guid
+              as String?,
+      guid: freezed == guid
           ? _value.guid
           : guid // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
+              as String?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumbnailUrl: null == thumbnailUrl
+              as String?,
+      thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -119,14 +119,14 @@ abstract class _$$RssFeedItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
-      String link,
-      String creator,
-      String pubDate,
-      String category,
-      String guid,
-      String description,
-      String thumbnailUrl});
+      {String? title,
+      String? link,
+      String? creator,
+      String? pubDate,
+      String? category,
+      String? guid,
+      String? description,
+      String? thumbnailUrl});
 }
 
 /// @nodoc
@@ -142,48 +142,48 @@ class __$$RssFeedItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
-    Object? link = null,
-    Object? creator = null,
-    Object? pubDate = null,
-    Object? category = null,
-    Object? guid = null,
-    Object? description = null,
-    Object? thumbnailUrl = null,
+    Object? title = freezed,
+    Object? link = freezed,
+    Object? creator = freezed,
+    Object? pubDate = freezed,
+    Object? category = freezed,
+    Object? guid = freezed,
+    Object? description = freezed,
+    Object? thumbnailUrl = freezed,
   }) {
     return _then(_$RssFeedItemImpl(
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      link: null == link
+              as String?,
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      creator: null == creator
+              as String?,
+      creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as String,
-      pubDate: null == pubDate
+              as String?,
+      pubDate: freezed == pubDate
           ? _value.pubDate
           : pubDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
+              as String?,
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      guid: null == guid
+              as String?,
+      guid: freezed == guid
           ? _value.guid
           : guid // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
+              as String?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumbnailUrl: null == thumbnailUrl
+              as String?,
+      thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -192,31 +192,31 @@ class __$$RssFeedItemImplCopyWithImpl<$Res>
 
 class _$RssFeedItemImpl implements _RssFeedItem {
   const _$RssFeedItemImpl(
-      {required this.title,
-      required this.link,
-      required this.creator,
-      required this.pubDate,
-      required this.category,
-      required this.guid,
-      required this.description,
-      required this.thumbnailUrl});
+      {this.title,
+      this.link,
+      this.creator,
+      this.pubDate,
+      this.category,
+      this.guid,
+      this.description,
+      this.thumbnailUrl});
 
   @override
-  final String title;
+  final String? title;
   @override
-  final String link;
+  final String? link;
   @override
-  final String creator;
+  final String? creator;
   @override
-  final String pubDate;
+  final String? pubDate;
   @override
-  final String category;
+  final String? category;
   @override
-  final String guid;
+  final String? guid;
   @override
-  final String description;
+  final String? description;
   @override
-  final String thumbnailUrl;
+  final String? thumbnailUrl;
 
   @override
   String toString() {
@@ -256,31 +256,31 @@ class _$RssFeedItemImpl implements _RssFeedItem {
 
 abstract class _RssFeedItem implements RssFeedItem {
   const factory _RssFeedItem(
-      {required final String title,
-      required final String link,
-      required final String creator,
-      required final String pubDate,
-      required final String category,
-      required final String guid,
-      required final String description,
-      required final String thumbnailUrl}) = _$RssFeedItemImpl;
+      {final String? title,
+      final String? link,
+      final String? creator,
+      final String? pubDate,
+      final String? category,
+      final String? guid,
+      final String? description,
+      final String? thumbnailUrl}) = _$RssFeedItemImpl;
 
   @override
-  String get title;
+  String? get title;
   @override
-  String get link;
+  String? get link;
   @override
-  String get creator;
+  String? get creator;
   @override
-  String get pubDate;
+  String? get pubDate;
   @override
-  String get category;
+  String? get category;
   @override
-  String get guid;
+  String? get guid;
   @override
-  String get description;
+  String? get description;
   @override
-  String get thumbnailUrl;
+  String? get thumbnailUrl;
 
   /// Create a copy of RssFeedItem
   /// with the given fields replaced by the non-null parameter values.
