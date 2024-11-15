@@ -190,7 +190,7 @@ class __$$RssFeedItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RssFeedItemImpl implements _RssFeedItem {
+class _$RssFeedItemImpl extends _RssFeedItem {
   const _$RssFeedItemImpl(
       {this.title,
       this.link,
@@ -199,7 +199,8 @@ class _$RssFeedItemImpl implements _RssFeedItem {
       this.category,
       this.guid,
       this.description,
-      this.thumbnailUrl});
+      this.thumbnailUrl})
+      : super._();
 
   @override
   final String? title;
@@ -254,7 +255,7 @@ class _$RssFeedItemImpl implements _RssFeedItem {
       __$$RssFeedItemImplCopyWithImpl<_$RssFeedItemImpl>(this, _$identity);
 }
 
-abstract class _RssFeedItem implements RssFeedItem {
+abstract class _RssFeedItem extends RssFeedItem {
   const factory _RssFeedItem(
       {final String? title,
       final String? link,
@@ -264,6 +265,7 @@ abstract class _RssFeedItem implements RssFeedItem {
       final String? guid,
       final String? description,
       final String? thumbnailUrl}) = _$RssFeedItemImpl;
+  const _RssFeedItem._() : super._();
 
   @override
   String? get title;

@@ -8,6 +8,8 @@ part 'list_tab_provider.g.dart';
 
 @freezed
 class RssFeedItem with _$RssFeedItem {
+  const RssFeedItem._();
+
   const factory RssFeedItem({
     String? title,
     String? link,
@@ -40,6 +42,15 @@ class RssFeedItem with _$RssFeedItem {
       description: description,
       thumbnailUrl: thumbnailUrl,
     );
+  }
+
+  String get croppedDescription {
+    const maxLength = 50;
+    if (description == null) return '...';
+
+    return description!.length > maxLength
+        ? '${description!.substring(0, maxLength)}...'
+        : description!;
   }
 }
 
