@@ -40,7 +40,7 @@ class _PhotoTabFeatureState extends ConsumerState<PhotoTabFeature>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Questo pulsante apre la galleria o la fotocamera per scegliere un\'immagine e visualizzarla.',
+            'Questo pulsante apre la galleria o la fotocamera per scegliere un\'immagine e visualizzarla.\nPrecarica l\'ultima immagine scelta.',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
