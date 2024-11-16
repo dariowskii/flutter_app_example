@@ -1,10 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sisal/features/photo_tab_feature/data/providers/image_provider.dart'
-    hide Image;
+import 'package:sisal/features/photo_tab_feature/data/providers/image_provider.dart';
+import 'package:sisal/features/photo_tab_feature/presentation/choose_image_source_modal.dart';
+import 'package:sisal/features/photo_tab_feature/presentation/image_view.dart';
 
 class PhotoTabFeature extends ConsumerStatefulWidget {
   const PhotoTabFeature({super.key});
@@ -21,70 +20,14 @@ class _PhotoTabFeatureState extends ConsumerState<PhotoTabFeature>
   void _chooseSource() async {
     final source = await showModalBottomSheet<ImageSource>(
       context: context,
-      builder: (context) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  title: const Text('Galleria'),
-                  onTap: () {
-                    Navigator.pop(
-                      context,
-                      ImageSource.gallery,
-                    );
-                  },
-                ),
-                ListTile(
-                  title: const Text('Fotocamera'),
-                  onTap: () {
-                    Navigator.pop(
-                      context,
-                      ImageSource.camera,
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+      builder: (context) => const ChooseImageSourceModal(),
     );
 
     if (source == null) {
       return;
     }
 
-    _pickImage(source: source);
-  }
-
-  void _pickImage({required ImageSource source}) async {
-    try {
-      final image = await ImagePicker().pickImage(
-        source: source,
-      );
-
-      if (image == null) {
-        return;
-      }
-
-      final bytes = await image.readAsBytes();
-      ref.read(imageProvider.notifier).save(bytes);
-    } catch (e) {
-      if (!mounted) {
-        return;
-      }
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Errore durante il caricamento dell\'immagine.: $e',
-          ),
-        ),
-      );
-    }
+    ref.read(imageProvider.notifier).pickImageAndSave(source: source);
   }
 
   @override
@@ -103,32 +46,7 @@ class _PhotoTabFeatureState extends ConsumerState<PhotoTabFeature>
           ),
           const SizedBox(height: 32),
           switch (asyncImage) {
-            AsyncData(:final value) => value != null
-                ? AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 4,
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.memory(
-                          base64Decode(value),
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          gaplessPlayback: true,
-                        ),
-                      ),
-                    ),
-                  )
-                : const SizedBox.shrink(),
+            AsyncData(:final value) => ImageView(base64Image: value),
             AsyncError(:final error) => Text('Errore: $error'),
             _ => const CircularProgressIndicator.adaptive(),
           },

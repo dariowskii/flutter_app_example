@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sisal'),
+        centerTitle: true,
       ),
       body: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
